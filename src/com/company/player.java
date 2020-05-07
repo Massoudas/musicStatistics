@@ -18,7 +18,7 @@ public class player {
      void play(User user, Track track){
         System.out.println("Now playing: " +track.artist.artistName + " - " + track.trackName);
 
-        if(!Statistics.getArtistTrackStatistic().containsKey(track.artist) || !Statistics.getArtistTrackStatistic().values().contains(track)){
+        if(!Statistics.getArtistTrackStatistic().containsKey(track.artist) || !Statistics.getArtistTrackStatistic().get(track.artist).containsKey(track)){
             HashMap<Track, Integer> innerHashMap = new HashMap<>();
             innerHashMap.put(track,1);
             Statistics.getArtistTrackStatistic().put(track.artist, innerHashMap);
@@ -29,7 +29,7 @@ public class player {
             Statistics.getArtistTrackStatistic().put(track.artist, innerHashMap);
         }
 
-        if(!Statistics.getArtistUserStatistic().containsKey(track.artist) || !Statistics.getArtistUserStatistic().values().contains(user)){
+        if(!Statistics.getArtistUserStatistic().containsKey(track.artist) || !Statistics.getArtistUserStatistic().get(track.artist).containsKey(user)){
             HashMap<User, Integer> innerHashMap = new HashMap<>();
             innerHashMap.put(user,1);
             Statistics.getArtistUserStatistic().put(track.artist, innerHashMap);
@@ -40,7 +40,7 @@ public class player {
             Statistics.getArtistUserStatistic().put(track.artist, innerHashMap);
         }
 
-         if(!Statistics.getUserTrackStatistics().containsKey(user) || !Statistics.getUserTrackStatistics().values().contains(track)){
+         if(!Statistics.getUserTrackStatistics().containsKey(user) || !Statistics.getUserTrackStatistics().get(user).containsKey(track)){
              HashMap<Track, Integer> innerHashMap = new HashMap<>();
              innerHashMap.put(track,1);
              Statistics.getUserTrackStatistics().put(user, innerHashMap);
@@ -51,7 +51,7 @@ public class player {
              Statistics.getUserTrackStatistics().put(user, innerHashMap);
          }
 
-         if(!Statistics.getUserArtistStatistics().containsKey(user) || !Statistics.getUserArtistStatistics().values().contains(track)){
+         if(!Statistics.getUserArtistStatistics().containsKey(user) || !Statistics.getUserArtistStatistics().get(user).containsKey(track.artist)){
              HashMap<Artist, Integer> innerHashMap = new HashMap<>();
              innerHashMap.put(track.artist,1);
              Statistics.getUserArtistStatistics().put(user, innerHashMap);
@@ -62,48 +62,6 @@ public class player {
              Statistics.getUserArtistStatistics().put(user, innerHashMap);
          }
 
-
-
-
-//        if(Statistics.getArtistTrackStatistics().containsKey(track)){
-//            Statistics.getArtistTrackStatistics().put(track , Statistics.getArtistTrackStatistics().get(track)+1);
-//
-//        }else{
-//            Statistics.getArtistTrackStatistics().put(track,1);
-//        }
-//
-//        Statistics.getArtistStatistic().put(track.artist, Statistics.getArtistTrackStatistics());
-//        Integer value = 0;
-//        for (Map.Entry<Track, Integer> entry: Statistics.getArtistTrackStatistics().entrySet()) {
-//            value+=entry.getValue();
-//        }
-//        Statistics.getCountOfTracksFromArtistWasPlayed().put(track.artist, value );
-//        HashMap<Artist, Integer> valueOfUserArtistStatistics = new HashMap<>();
-//        valueOfUserArtistStatistics.put(track.artist, 1);
-//        if(!Statistics.getUserArtistStatistics().containsKey(user) || !Statistics.getUserArtistStatistics().values().contains(track.artist)){
-//            Statistics.getUserArtistStatistics().put(user, valueOfUserArtistStatistics);
-//        }else{
-//            HashMap<Artist, Integer> innerHashMap = new HashMap<>();
-//            innerHashMap=Statistics.getUserArtistStatistics().get(user);
-//            innerHashMap.put(track.artist, innerHashMap.get(track.artist)+1);
-//            Statistics.getUserArtistStatistics().put(user, innerHashMap);
-//        }
-////            Statistics.getValueOfUserArtistStatistics().put(track.artist, 1);
-////            Statistics.getUserArtistStatistics().put(user, Statistics.getValueOfUserArtistStatistics());
-//////            private static HashMap<User, HashMap<Artist, Integer>> userArtistStatistics = new HashMap<>();
-////
-////        }else {
-////            Statistics.getValueOfUserArtistStatistics().put(track.artist, Statistics.getValueOfUserArtistStatistics().get(track.artist)+1);
-////        }
-//
-//        if(Statistics.getUserTrackStatistics().isEmpty() || !Statistics.getValueOfUserTrackStatistics().containsKey(track)){
-//            Statistics.getValueOfUserTrackStatistics().put(track, 1);
-//            Statistics.getUserTrackStatistics().put(user, Statistics.getValueOfUserTrackStatistics());
-//        }else {
-//            Statistics.getValueOfUserTrackStatistics().put(track, Statistics.getValueOfUserTrackStatistics().get(track)+1);
-//        }
-//
-//
     }
 
 }

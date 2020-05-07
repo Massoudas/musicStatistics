@@ -99,9 +99,9 @@ public class Statistics {
         int numberOfTotalStreams = 0;
 
         for (Map.Entry<User, HashMap<Track, Integer>> entry : userTrackStatistics.entrySet()) {
-            Collection<Integer> newCollection = entry.getValue().values();
-            for(Integer val:newCollection){
-                numberOfTotalStreams+=val;
+            HashMap<Track, Integer> innerHashMap = entry.getValue();
+            for(Map.Entry<Track, Integer> entry1 : innerHashMap.entrySet()){
+               numberOfTotalStreams+=entry1.getValue();
             }
         }
         System.out.println("The total number of streams is: "+ numberOfTotalStreams);

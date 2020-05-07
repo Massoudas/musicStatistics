@@ -45,6 +45,6 @@ public class Main {
         st.favoriteTrackOfThisUserIs(user2);
         st.numberOfStreamsInTotalIs();
         st.topArtist(user3);
-        
+
     }
 }
