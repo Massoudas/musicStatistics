@@ -11,21 +11,6 @@ public class Statistics {
     private static HashMap<User, HashMap<Track, Integer>> userTrackStatistics = new HashMap<>();
     private static HashMap<User, HashMap<Artist, Integer>> userArtistStatistics = new HashMap<>();
 
-//    Today will be all about music. We're going to build a streaming service. The feature our users want most, is to gather listening statistics per track, per artist, per album and per user.
-//
-//    Our base entity is therefore the track. A track can belong to an album, but doesn't have to. It has an id, a name, an artist and it might appear on an album. An album is a list of tracks. Our streaming service should be called "redi - streaming". It has one player, that, once it is invoked with a track, will print "Now playing: <artist_name> - <track_name>".
-//
-//    Our users are interested in:
-//
-//    Who was their top artist?
-//    Which was their favorite track?
-//    Our artists are interested in:
-//
-//    Who is my top fan? (Most played tracks)
-//    How many different users have streamed my music?
-//How many streams have there been in total?
-//            #Let's start with structures
-
 
     public static HashMap<Artist, HashMap<Track, Integer>> getArtistTrackStatistic() {
         return artistTrackStatistic;
@@ -43,22 +28,17 @@ public class Statistics {
         return userArtistStatistics;
     }
 
-    public static void setUserArtistStatistics(HashMap<User, HashMap<Artist, Integer>> userArtistStatistics) {
-        Statistics.userArtistStatistics = userArtistStatistics;
-    }
 
     public static HashMap<Artist, HashMap<Track, Integer>> getArtistStatistic() {
         return artistTrackStatistic;
     }
 
     public void topArtist(User user){
-        HashMap<Artist, Integer> innerHashMap = new HashMap<>();
-        innerHashMap = userArtistStatistics.get(user);
+        HashMap<Artist, Integer> innerHashMap = userArtistStatistics.get(user);
         int maxValueInMap=(Collections.max(innerHashMap.values()));
         for (Map.Entry<Artist, Integer> entry : innerHashMap.entrySet()) {  // Itrate through hashmap
             if (entry.getValue()==maxValueInMap) {
-                System.out.println(entry.getKey().artistName);
-                Artist top = entry.getKey();
+                System.out.println("top artist of "+user.name+ " is "+ entry.getKey().artistName);
             }
         }
     }

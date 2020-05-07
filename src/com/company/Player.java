@@ -3,7 +3,7 @@ package com.company;
 import java.util.HashMap;
 import java.util.Map;
 
-public class player {
+public class Player {
 //    private static HashMap<Track, Integer> artistTrackStatistics = new HashMap<>();
 //    private static HashMap<Artist, HashMap<Track, Integer>> artistTrackStatistic= new HashMap<>();
 //    private static HashMap<Artist, HashMap<User, Integer>> artistUserStatistic= new HashMap<>();

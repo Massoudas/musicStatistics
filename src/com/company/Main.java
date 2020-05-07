@@ -1,12 +1,9 @@
 package com.company;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main {
 
     public static void main(String[] args) {
-        player Player = new player();
+        Player Player = new Player();
         User user1 = new User("Massoud");
         User user2 = new User("Shadan");
         User user3 = new User("Nazanin");
@@ -40,11 +37,12 @@ public class Main {
         Player.play(user3, track5);
         Player.play(user3, track6);
         Statistics st=new Statistics();
-        st.howManyUserPlayedTheArtist(artist2);
+        st.howManyUserPlayedTheArtist(artist1);
         st.artistTopFanIs(artist1);
         st.favoriteTrackOfThisUserIs(user2);
         st.numberOfStreamsInTotalIs();
         st.topArtist(user3);
+        System.out.println(Statistics.getUserTrackStatistics().get(user2).get(track1));
 
     }
 }
