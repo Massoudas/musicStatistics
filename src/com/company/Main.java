@@ -19,30 +19,30 @@ public class Main {
         Track track4 = new Track("04", "tr4", artist3, album3);
         Track track5 = new Track("05", "tr5", artist1, album1);
         Track track6 = new Track("06", "tr6", artist2, album2);
-
-
-        Player.play(user1, track1);
-        Player.play(user2, track2);
-        Player.play(user1, track3);
-        Player.play(user2, track1);
-        Player.play(user2, track1);
-        Player.play(user2, track1);
-        Player.play(user2, track1);
-        Player.play(user2, track1);
-        Player.play(user1, track1);
-        Player.play(user1, track3);
-        Player.play(user1, track4);
-        Player.play(user1, track5);
-        Player.play(user1, track6);
-        Player.play(user3, track5);
-        Player.play(user3, track6);
+        Player p = new Player();
+        p.play(user1, track1);
+        p.play(user2, track2);
+        p.play(user1, track3);
+        p.play(user2, track1);
+        p.play(user2, track1);
+        p.play(user2, track1);
+        p.play(user2, track1);
+        p.play(user2, track1);
+        p.play(user1, track1);
+        p.play(user1, track3);
+        p.play(user1, track4);
+        p.play(user1, track5);
+        p.play(user1, track6);
+        p.play(user3, track5);
+        p.play(user3, track6);
         Statistics st=new Statistics();
         st.howManyUserPlayedTheArtist(artist1);
-        st.artistTopFanIs(artist1);
-        st.favoriteTrackOfThisUserIs(user2);
-        st.numberOfStreamsInTotalIs();
-        st.topArtist(user3);
-        System.out.println(Statistics.getUserTrackStatistics().get(user2).get(track1));
+        st.artistTopFanIs(artist3);
+        st.favoriteTrackOfThisUserIs(user1);
+        p.numberOfStreamsInTotalIs();
+        st.topArtist(user1);
+
+
 
     }
 }
